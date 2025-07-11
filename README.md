@@ -1,40 +1,86 @@
-# 🕵️‍♂️ Fraud Detection using Machine Learning
+# 🕵️ Fraud Detection using Machine Learning
 
-This project is a complete **Fraud Detection System** built with **Machine Learning** and a **Flask Web Interface**. It allows users to detect fraudulent transactions using a trained model and view predictions in a user-friendly way.
+This project is a simple **fraud detection system** using a trained Machine Learning model and a **Flask web interface**. It allows users to upload data and get predictions about whether a transaction is fraudulent.
 
-## 🚀 Features
+---
 
-- Machine Learning model trained to detect fraudulent data.
-- Flask-powered web interface for user interaction.
-- Upload CSV file and get predictions directly from the browser.
-- Pre-trained model stored as `.pkl` file and loaded on runtime.
+## 📌 Features
 
-## 📂 Project Structure
+- Fraud detection using a trained ML model (`model.pkl`)
+- Flask-based web interface
+- Upload CSV and view results instantly
 
+---
 
-## 🧠 Technologies Used
+## 💻 Technologies Used
 
-- Python 3
-- Scikit-learn
-- Pandas, NumPy
+- Python
 - Flask
-- HTML (Jinja2 templates)
+- Scikit-learn
+- Pandas
+- NumPy
+- HTML (Jinja2 templating)
 
-## 📊 How the Model Works
+---
 
-The model was trained on transactional data where fraudulent and non-fraudulent transactions were labeled. After training, the model was saved using `joblib` or `pickle` and used in a Flask app to serve predictions in real-time.
+## 📁 Folder Structure
 
-## 💻 How to Run Locally
+```
+Fraud-detection-using-ml/
+├── app.py                # Flask backend
+├── model.pkl             # Trained model file
+├── templates/
+│   └── index.html        # Web interface
+├── static/               # (optional CSS/images)
+├── requirements.txt      # Python dependencies
+└── README.md             # Project info
+```
 
-### 1. Clone the Repository
+---
 
-```bash
-git clone https://github.com/sagar1100-star/Fraud-detection-using-ml.git
-cd Fraud-detection-using-ml
-python -m venv venv
-source venv/bin/activate  # For Linux/Mac
-venv\Scripts\activate     # For Windows
-pip install -r requirements.txt
-python app.py
+## 🚀 How to Run the Project
 
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/sagar1100-star/Fraud-detection-using-ml.git
+   cd Fraud-detection-using-ml
+   ```
 
+2. **Create virtual environment (optional but recommended)**:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate       # For Windows
+   source venv/bin/activate    # For Linux/Mac
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the app**:
+   ```bash
+   python app.py
+   ```
+
+5. **Open in browser**:
+   Go to [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📷 Screenshots (Optional)
+
+_Add a screenshot of your web interface for better presentation._
+
+---
+
+## 👤 Author
+
+**Sagar R**  
+GitHub: [@sagar1100-star](https://github.com/sagar1100-star)
+
+---
+
+## 📄 License
+
+This project is open-source. Feel free to use, modify, and share.
