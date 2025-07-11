@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chart - Fraud Prevention Using Machine Learning</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff8dc, #d9ecff);
+      margin: 0;
+      padding: 0;
+      color: #0f2e47;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+    }
+
+    .nav-link {
+      margin-left: 20px;
+    }
+
+    h1, h4 {
+      text-align: center;
+      color: #0a2e52;
+    }
+
+    .section-title {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #d62828;
+      font-weight: 600;
+    }
+
+    .chart-wrapper {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .chart-img {
+      width: 90%;
+      max-width: 800px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+  </style>
+
+  <script>
+    google.charts.load('current', { packages: ['corechart'] });
+
+    google.charts.setOnLoadCallback(drawAccuracyChart);
+    google.charts.setOnLoadCallback(drawPieChart);
+
+    function drawAccuracyChart() {
+      const data = google.visualization.arrayToDataTable([
+        ['Model', 'Train Accuracy', 'Test Accuracy'],
+        ['StackingClassifier', 100, 99],
+        ['XGBClassifier', 96, 95]
+      ]);
+
+      const options = {
+        title: 'Model Accuracy Comparison',
+        colors: ['#0d6efd', '#20c997']
+      };
+
+      const chart = new google.visualization.BarChart(document.getElementById('accuracy-chart'));
+      chart.draw(data, options);
+    }
+
+    function drawPieChart() {
+      const data = google.visualization.arrayToDataTable([
+        ['Class', 'Records'],
+        ['Not Fraudulent', 80],
+        ['Fraudulent', 20]
+      ]);
+
+      const options = {
+        title: 'Fraud vs Non-Fraud Transactions',
+        is3D: true,
+        colors: ['#198754', '#dc3545']
+      };
+
+      const chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3">
+  <a class="navbar-brand" href="#">Fraud Prevention Using Machine Learning</a>
+  <div class="ms-auto d-flex">
+    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
+    <a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+    <a class="nav-link" href="{{ url_for('performance') }}">Performance</a>
+    <a class="nav-link" href="{{ url_for('chart') }}">Chart</a>
+    <a class="nav-link" href="{{ url_for('index') }}">Logout</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="container text-center py-5">
+  <h1>Fraud Prevention Using Machine Learning - Chart</h1>
+</div>
+
+<!-- Accuracy Chart -->
+<div class="section-title">Model Accuracy Comparison</div>
+<div id="accuracy-chart" style="width: 90%; height: 400px; margin: 0 auto;"></div>
+
+<!-- Dataset Visualization -->
+<div class="section-title">Fraud vs Non-Fraud Transactions</div>
+<div id="pie-chart" style="width: 90%; height: 500px; margin: 0 auto;"></div>
+
+<!-- Static Chart Images -->
+<div class="chart-wrapper">
+  <div class="section-title">Payment Method Count Chart</div>
+  <img class="chart-img" src="../static/payment.png" alt="Payment Chart">
+
+  <div class="section-title">Product Category Chart</div>
+  <img class="chart-img" src="../static/category.png" alt="Category Chart">
+
+  <div class="section-title">Transaction Hour Count Distribution</div>
+  <img class="chart-img" src="../static/hour.png" alt="Hour Chart">
+
+  <div class="section-title">Account Age Days Chart</div>
+  <img class="chart-img" src="../static/accage.png" alt="Account Age Chart">
+
+  <div class="section-title">Device Used Count Chart</div>
+  <img class="chart-img" src="../static/device.png" alt="Device Used Chart">
+
+  <div class="section-title">Customer Age Density Chart</div>
+  <img class="chart-img" src="../static/cage.png" alt="Customer Age Chart">
+
+  <div class="section-title">Quantity Density Chart</div>
+  <img class="chart-img" src="../static/quantity.png" alt="Quantity Chart">
+
+  <div class="section-title">Transaction Amount Density Chart</div>
+  <img class="chart-img" src="../static/amount.png" alt="Amount Chart">
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  &copy; 2025 Fraud Prevention Using Machine Learning. All rights reserved.
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Performance - Fraud Prevention Using Machine Learning</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff8dc, #d9ecff);
+      margin: 0;
+      padding: 0;
+      color: #0f2e47;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 500;
+    }
+
+    .nav-link {
+      margin-left: 20px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      font-weight: 600;
+      color: #0a2e52;
+    }
+
+    .metrics {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    .metrics span {
+      display: inline-block;
+      font-size: 22px;
+      margin: 10px 20px;
+    }
+
+    .model-title {
+      color: green;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .conf-title {
+      color: red;
+      font-size: 28px;
+      margin: 30px 0 10px 150px;
+    }
+
+    .conf-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      height: auto;
+    }
+
+    .footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3">
+  <a class="navbar-brand" href="#">Fraud Prevention Using Machine Learning</a>
+  <div class="ms-auto d-flex">
+    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
+    <a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+    <a class="nav-link" href="{{ url_for('performance') }}">Performance</a>
+    <a class="nav-link" href="{{ url_for('chart') }}">Chart</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="header">
+  <h1>Fraud Prevention Using Machine Learning - Performance</h1>
+</div>
+
+<!-- XGBClassifier Section -->
+<div class="model-title">XGBClassifier</div>
+
+<div class="metrics">
+  <span><strong>Recall:</strong> 0.98 (Class 0), 0.93 (Class 1)</span><br>
+  <span><strong>F1 Score:</strong> 0.92 (Class 0), 0.98 (Class 1)</span><br>
+  <span><strong>Precision:</strong> 0.95 (Class 0), 0.95 (Class 1)</span>
+</div>
+
+<div class="conf-title">Confusion Matrix</div>
+<img class="conf-img" src="../static/output.png" alt="XGB Confusion Matrix">
+
+<!-- StackingClassifier Section -->
+<div class="model-title">StackingClassifier</div>
+
+<div class="metrics">
+  <span><strong>Recall:</strong> 1.00 (Class 0), 1.00 (Class 1)</span><br>
+  <span><strong>F1 Score:</strong> 1.00 (Class 0), 1.00 (Class 1)</span><br>
+  <span><strong>Precision:</strong> 1.00 (Class 0), 1.00 (Class 1)</span>
+</div>
+
+<div class="conf-title">Confusion Matrix</div>
+<img class="conf-img" src="../static/output1.png" alt="Stacking Confusion Matrix">
+
+<!-- Footer -->
+<div class="footer">
+  &copy; 2025 Fraud Prevention Using Machine Learning. All rights reserved.
+</div>
+
+<!-- JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</body>
+</html>
